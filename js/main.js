@@ -18,18 +18,19 @@ alunos.forEach((aluno, index) => {
     let tr = document.createElement("tr");
 
     let tdCod = document.createElement("td");
+    tr.id = index + 1
     let tdNome = document.createElement("td");
     let tdEmail = document.createElement("td");
     let tdTelefone = document.createElement("td");
     let tdProfissao = document.createElement("td");
     let tdBotao = document.createElement("td");
 
-    tdCod.textContent = index+1;
+    tdCod.textContent = index;
     tdNome.textContent = aluno.nome;
     tdEmail.textContent = aluno.email;
     tdTelefone.textContent = aluno.telefone;
     tdProfissao.textContent = aluno.profissao;
-    tdBotao.innerHTML = `<button class="btn-remover" onclick="remover(this)" >Remover</button>`
+    tdBotao.innerHTML = `<button class="btn-remover" onclick="remover(this)">Remover</button>`
 
     tr.appendChild(tdCod);
     tr.appendChild(tdNome);
@@ -45,8 +46,8 @@ alunos.forEach((aluno, index) => {
 
 });
 
-
 }
+
 function remover (id) {
     let row = id.parentNode.parentNode.id;
     row = document.getElementById(row);
