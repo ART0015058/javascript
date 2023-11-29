@@ -32,7 +32,7 @@ let produtos = [
 
 // carregar os dados do array na tabela
 window.onload = (event) => {
-    let tbody = document.querySelector("#myTable");
+    let tbody1 = document.querySelector("#myTable");
 alunos.forEach((aluno, index) => {
     let tr = document.createElement("tr");
 
@@ -59,9 +59,35 @@ alunos.forEach((aluno, index) => {
     tr.appendChild(tdBotao);
     
 
-    tbody.appendChild(tr); 
+    tbody1.appendChild(tr); 
 
 });
+
+let tbody2 = document.querySelector("#secondTable");
+    produtos.forEach((produto, index) => {
+        let tr = document.createElement("tr");
+
+        let tdCode = document.createElement("td");
+        tr.id = index + 1
+        let tdName = document.createElement("td");
+        let tdCategoria = document.createElement("td");
+        let tdPreco = document.createElement("td");
+        let tdMarca = document.createElement("td");
+
+        tdCode.textContent = index + 1;
+        tdName.textContent = produto.name;
+        tdCategoria.textContent = produto.categoria;
+        tdPreco.textContent = produto.preco;
+        tdMarca.textContent = produto.marca;
+
+        tr.appendChild(tdCode);
+        tr.appendChild(tdName);
+        tr.appendChild(tdCategoria);
+        tr.appendChild(tdPreco);
+        tr.appendChild(tdMarca);
+
+        tbody2.appendChild(tr);
+    })
 
 }
 
@@ -117,33 +143,4 @@ function adicionar () {
     //Para não recarregar a página
     return false
     
-}
-
-//Segunda tabela
-window.onload = (event) => {
-    let tbody = document.querySelector("#secondTable");
-    produtos.forEach((produto, index) => {
-        let tr = document.createElement("tr");
-
-        let tdCode = document.createElement("td");
-        tr.id = index + 1
-        let tdName = document.createElement("td");
-        let tdCategoria = document.createElement("td");
-        let tdPreco = document.createElement("td");
-        let tdMarca = document.createElement("td");
-
-        tdCode.textContent = index + 1;
-        tdName.textContent = produto.name;
-        tdCategoria.textContent = produto.categoria;
-        tdPreco.textContent = produto.preco;
-        tdMarca.textContent = produto.marca;
-
-        tr.appendChild(tdCode);
-        tr.appendChild(tdName);
-        tr.appendChild(tdCategoria);
-        tr.appendChild(tdPreco);
-        tr.appendChild(tdMarca);
-
-        tbody.appendChild(tr);
-    })
 }
