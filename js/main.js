@@ -1,22 +1,33 @@
 /* Definindo um array */
 let alunos = [
-    {nome: "Aninhha", email: "ninha@gmail.com", telefone: 21935484773, profissao: "frontend" },
-    { nome: "Jaque", email: "jaque@gmail.com", telefone: 21974450073, profissao: "backend" },
-    { nome: "Julinha", email: "juju@msn.com", telefone: 21979984073, profissao: "fullstack" },
-    { nome: "Lucao", email: "lucao@hotmail.com", telefone: 21954454075, profissao: "mobile" },
-    { nome: "Inacio", email: "inacio@yahoo.com", telefone: 21977458473, profissao: "mobile" },
-    { nome: "Maurao", email: "maurao@hotmail.com", telefone: 21944488576, profissao: "frontend" },
-    { nome: "Ramonzao", email: "monzao@gmail.com", telefone: 2173484973, profissao: "frontend" },
-    { nome: "Davizao", email: "davi@msn.com", telefone: 21975584073, profissao: "frontend" },
+    {nome: "Aninhha", email: "ninha@gmail.com", telefone: 21935484773, profissao: "frontend"},
+    {nome: "Jaque", email: "jaque@gmail.com", telefone: 21974450073, profissao: "backend"},
+    {nome: "Julinha", email: "juju@msn.com", telefone: 21979984073, profissao: "fullstack"},
+    {nome: "Lucao", email: "lucao@hotmail.com", telefone: 21954454075, profissao: "mobile"},
+    {nome: "Inacio", email: "inacio@yahoo.com", telefone: 21977458473, profissao: "mobile"},
+    {nome: "Maurao", email: "maurao@hotmail.com", telefone: 21944488576, profissao: "frontend"},
+    {nome: "Ramonzao", email: "monzao@gmail.com", telefone: 2173484973, profissao: "frontend"},
+    {nome: "Davizao", email: "davi@msn.com", telefone: 21975584073, profissao: "frontend"},
 
 ]
 
 //Definindo um segundo array
 let produtos = [
-    {nome:"Iphone XV", categoria: "smartphones", preco: 6999.00, marca:"Apple"},
-    {nome: "Samsung Galaxy S25", categoria: "smartphones", preco: 5999.00, marca:"Samsung"},
-    {nome: "Moto G33", categoria:"smartphones", preco: 900.00, marca:"Motorola"},
-    {nome: ""}
+    {name:"Iphone 15", categoria: "smartphones", preco: 9999.00, marca:"Apple"},
+    {name: "Samsung Galaxy S25", categoria: "smartphones", preco: 5999.00, marca:"Samsung"},
+    {name: "Moto G33", categoria:"smartphones", preco: 300.00, marca:"Motorola"},
+    {name: "Samsung Galaxy A03", categoria:"smartphones", preco:499.00, marca:"Samsung"},
+    {name:"Moto G53", categoria:"smartphones", preco:1169.99, marca:"Motorola"},
+    {name:"Iphone 14", categoria:"smartphone", preco: 4499.10, marca:"Apple"},
+    {name:"Acer Aspire 5", categoria:"notebooks", preco: 2789.10, marca:"Acer"},
+    {name:"Samsung Book", categoria:"notebooks", preco: 2519.10, marca:"Samsung"},
+    {name:"Dell Inspiron 15", categoria:"notebooks", preco: 2609.10 , marca:"Dell"},
+    {name:"Lenovo Ideapad", categoria:"notebooks", preco: 2384.10 , marca:"Lenovo"},
+    {name:"Asus Vivobook", categoria:"notebooks", preco: 2519.10, marca:"Asus"},
+    {name:"Monitor Smart Tv LG 24", categoria:"monitor tv", preco: 944.28, marca:"LG"},
+    {name:"Monitor Notebook Tv CCE 14", categoria:"monitor tv", preco: 975.29, marca:"CCE"},
+    {name:"Tv Monitor 24 Hd Multilaser", categoria:"monitor tv", preco: 1149.90, marca:"Multilaser"},
+    {name:"Tv Monitor LED 24 HYE", categoria:"monitor tv", preco: 1302.99, marca:"HYE"},
 ]
 
 // carregar os dados do array na tabela
@@ -106,4 +117,33 @@ function adicionar () {
     //Para não recarregar a página
     return false
     
+}
+
+//Segunda tabela
+window.onload = (event) => {
+    let tbody = document.querySelector("#secondTable");
+    produtos.forEach((produto, index) => {
+        let tr = document.createElement("tr");
+
+        let tdCode = document.createElement("td");
+        tr.id = index + 1
+        let tdName = document.createElement("td");
+        let tdCategoria = document.createElement("td");
+        let tdPreco = document.createElement("td");
+        let tdMarca = document.createElement("td");
+
+        tdCode.textContent = index + 1;
+        tdName.textContent = produto.name;
+        tdCategoria.textContent = produto.categoria;
+        tdPreco.textContent = produto.preco;
+        tdMarca.textContent = produto.marca;
+
+        tr.appendChild(tdCode);
+        tr.appendChild(tdName);
+        tr.appendChild(tdCategoria);
+        tr.appendChild(tdPreco);
+        tr.appendChild(tdMarca);
+
+        tbody.appendChild(tr);
+    })
 }

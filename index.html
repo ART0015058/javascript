@@ -10,14 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <header>
+    <header class="container">
         <nav id="nav">
             <a href="#">Cadastro de alunos</a>
         </nav>        
     </header>
     <section id="table">
-          
-        <form method="POST">
+        <div class="container">
+            <form method="POST">
         
             <div class="mb-3">
                 <label 
@@ -63,11 +63,13 @@
             
             <button type="submit" value="">Iniciar gráfico pizza</button>
         
-        </form>
+            </form>
+        </div>
 
         <hr>
-
-        <table id="myTable" border="1">
+        
+        <div class="container">
+        <table id="myTable" class="table table-primary table-bordered">
             <thead>
                 <tr id="0">
                     <th>cod</th>
@@ -83,8 +85,32 @@
             </tbody>
             
         </table>
+        </div>
 
-        <p>Ver pokeAPI</p>
+       <br><hr><br>
+
+        <div class="container">
+
+        <table id="secondTable" class="table table-light table-bordered">
+            <thead>
+                <tr id="0">
+                    <th>cod</th>
+                    <th>nome</th>
+                    <th>categoria</th>
+                    <th>preço</th>
+                    <th>marca</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            
+        </table>
+    
+        </div>
+
+
+        
 
     </section>
     
