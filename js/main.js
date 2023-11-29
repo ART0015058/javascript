@@ -11,6 +11,14 @@ let alunos = [
 
 ]
 
+//Definindo um segundo array
+let produtos = [
+    {nome:"Iphone XV", categoria: "smartphones", preco: 6999.00, marca:"Apple"},
+    {nome: "Samsung Galaxy S25", categoria: "smartphones", preco: 5999.00, marca:"Samsung"},
+    {nome: "Moto G33", categoria:"smartphones", preco: 900.00, marca:"Motorola"},
+    {nome: ""}
+]
+
 // carregar os dados do array na tabela
 window.onload = (event) => {
     let tbody = document.querySelector("#myTable");
@@ -25,7 +33,7 @@ alunos.forEach((aluno, index) => {
     let tdProfissao = document.createElement("td");
     let tdBotao = document.createElement("td");
 
-    tdCod.textContent = index;
+    tdCod.textContent = index+1;
     tdNome.textContent = aluno.nome;
     tdEmail.textContent = aluno.email;
     tdTelefone.textContent = aluno.telefone;
@@ -40,17 +48,62 @@ alunos.forEach((aluno, index) => {
     tr.appendChild(tdBotao);
     
 
-    tbody.appendChild(tr);
-
-    
+    tbody.appendChild(tr); 
 
 });
 
 }
+
+// Definindo funções de remoção e adição
 
 function remover (id) {
     let row = id.parentNode.parentNode.id;
     row = document.getElementById(row);
     row.parentNode.removeChild(row);
     return false
+}
+
+function adicionar () {
+    //Definindo as variáveis e recebendo os dados
+    let nome = document.getElementById(`nome`).value;
+    let email = document.getElementById(`email`).value;
+    let telefone = document.getElementById(`telefone`).value;
+    let profissao = document.getElementById(`profissao`).value;
+    let table = document.getElementById(`myTable`);
+
+    //Calculando o tamanho da tabela
+    let tablesize = table.rows.length;
+    //Inserindo uma linha abaixo da última linha da tabela
+    let row = table.insertRow(tablesize);
+
+    let col1 = row.insertCell(0);
+    let col2 = row.insertCell(1);
+    let col3 = row.insertCell(2);
+    let col4 = row.insertCell(3);
+    let col5 = row.insertCell(4);
+    let col6 = row.insertCell(5);
+
+    //Adicionando o id no elemento a ser criado
+    row.id = tablesize;
+
+    // Criando o código do botão para remover a linha
+    let btnCode = `<button class="btn-remover" onclick="remover(this)">Remover</button>`;
+
+    //Preenchendo as células da linha
+    col1.innerHTML = tablesize;
+    col2.innerHTML = nome;
+    col3.innerHTML = email;
+    col4.innerHTML = telefone;
+    col5.innerHTML = profissao;
+    col6.innerHTML = btnCode;
+
+    //Limpar os campos do formulário
+    document.getElementById(`nome`).value = " ";
+    document.getElementById(`email`).value = " ";
+    document.getElementById(`telefone`).value = " ";
+    document.getElementById(`profissao`).value = " ";
+
+    //Para não recarregar a página
+    return false
+    
 }
