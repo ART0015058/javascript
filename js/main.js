@@ -124,7 +124,7 @@ function adicionar () {
     row.id = tablesize;
 
     // Criando o código do botão para remover a linha
-    let btnCode = `<button class="btn-remover" onclick="remover(this)">Remover</button>`;
+    let btnCode = `<button class="btn-outline-danger" onclick="remover(this)">Remover</button>`;
 
     //Preenchendo as células da linha
     col1.innerHTML = tablesize;
