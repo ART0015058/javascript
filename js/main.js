@@ -32,7 +32,7 @@ let produtos = [
 
 // carregar os dados do array na tabela
 window.onload = (event) => {
-    let tbody1 = document.querySelector("#myTable");
+    let tbody1 = document.querySelector("#tBody1");
 alunos.forEach((aluno, index) => {
     let tr = document.createElement("tr");
 
@@ -49,7 +49,9 @@ alunos.forEach((aluno, index) => {
     tdEmail.textContent = aluno.email;
     tdTelefone.textContent = aluno.telefone;
     tdProfissao.textContent = aluno.profissao;
-    tdBotao.innerHTML = `<button class="btn-remover" onclick="remover(this)">Remover</button>`
+    tdBotao.innerHTML = `<button class="btn btn-outline-danger btn-hover" onclick="remover(this)">Remover</button>`
+
+    tbody1.appendChild(tr);
 
     tr.appendChild(tdCod);
     tr.appendChild(tdNome);
@@ -57,13 +59,10 @@ alunos.forEach((aluno, index) => {
     tr.appendChild(tdTelefone);
     tr.appendChild(tdProfissao);
     tr.appendChild(tdBotao);
-    
-
-    tbody1.appendChild(tr); 
 
 });
 
-let tbody2 = document.querySelector("#secondTable");
+let tbody2 = document.querySelector("#tBody2");
     produtos.forEach((produto, index) => {
         let tr = document.createElement("tr");
 
@@ -80,14 +79,17 @@ let tbody2 = document.querySelector("#secondTable");
         tdPreco.textContent = produto.preco;
         tdMarca.textContent = produto.marca;
 
+        tbody2.appendChild(tr);
+
         tr.appendChild(tdCode);
         tr.appendChild(tdName);
         tr.appendChild(tdCategoria);
         tr.appendChild(tdPreco);
         tr.appendChild(tdMarca);
-
-        tbody2.appendChild(tr);
+        
     })
+
+    initPieChart();
 
 }
 
@@ -140,7 +142,68 @@ function adicionar () {
     document.getElementById(`telefone`).value = " ";
     document.getElementById(`profissao`).value = " ";
 
+   
+
     //Para não recarregar a página
-    return false
-    
+    return false;  
+}
+
+//Criar o gráfico
+
+const initPieChart = () => {
+        const ctx = document.getElementById("myChart");
+        const data = {
+            labels: ['Frontend', 'Backend', 'Fullstack', 'Mobile'],
+            datasets: [
+                {
+                    label: 'Quantidade',
+                    data: [10,20,50,20],
+                    backgroundColor: ['pink', 'lightblue', 'lightgreen', 'orange'],
+                   
+                }
+            ]
+        }
+        const pieChart = new Chart(
+            ctx,
+            {
+                type: 'pie',
+                data: data
+            }
+        );
+}
+
+//Criar outro gráfico
+
+const initPolarAreaChart = () => {
+    removerChart();
+    const ctx = document.getElementById("myChart");
+    const data = {
+        labels: ['Frontend', 'Backend', 'Fullstack', 'Mobile'],
+        datasets: [{
+            label: 'Quantidade',
+            data: [18,16,12,14],
+            backgroundColor: ['pink', 'lightblue', 'lightgreen', 'orange'],
+            hoverOffset: 5,
+
+        }],
+    };
+    const polarAreaChart = new Chart(
+        ctx,
+        {
+            type:'polarArea',
+            data: data
+        }
+
+    )
+
+}
+
+//Remover gráfico
+
+const removerChart = () => {
+    const divChart = document.querySelector('.chart');
+    document.getElementById("myChart").remove();
+    const myChart = document.createElement("canvas");
+    myChart.id = "myChart";
+    divChart.appendChild(myChart);
 }

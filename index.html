@@ -8,77 +8,108 @@
     <link rel='stylesheet' type='text/css' media='screen' href='./css/main.css'>
     <script src='./js/main.js'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header class="container">
-        <nav id="nav" class="navbar fixed-top bg-info-subtle border-bottom p-2">
-            <a class="navbar-brand" href="#">Cadastro de alunos</a>
+    <header>
+        <nav id="nav" class="navbar bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+             <a class="navbar-brand" href="#">Cadastro de alunos</a>
+             <button class="btn btn-primary" onclick="initPolarAreaChart()">
+                 Polar Area chart
+             </button>
+            </div>
         </nav>        
     </header>
     
     <section id="table">
-        <div class="container mt-5 p-3">
-            <form method="POST">
-        
-            <div class="row mb-3">
-                <div class="col-4">
-                <label class="form-label"
-                    for="nome">Nome</label>
-                <input class="form-control"
-                    id="nome" 
-                    type="text" 
-                    placeholder="Insira o seu nome" 
-                    required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                <label class="form-label"
-                    for="email">Email</label>
-                <input class="form-control"
-                    id="email" 
-                    type="email" 
-                    placeholder="Insira o seu email" 
-                    required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                <label class="form-label"
-                    for="telefone">Telefone</label>
-                <input class="form-control"
-                    id="telefone"
-                    name="telefone" 
-                    type="tel" 
-                    placeholder="XX-XXXXX-XXXX"
-                    title="Somente números"
-                    pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" 
-                    required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                <label class="form-label"
-                    for="profissao">Profissão</label>
-                <input class="form-control"
-                    id="profissao" 
-                    type="text" 
-                    placeholder="Insira a sua profissão" 
-                    required>
-                </div>
-            </div>
+       <div class="form-chart-container">
+            <div class="form">
+                <form method="POST">
+                    <div class="mb-3">
+                            <label 
+                                class="form-label" 
+                                for="nome">
+                                    Nome
+                            </label>
+                            <input 
+                                class="form-control" 
+                                id="nome" 
+                                type="text" 
+                                placeholder="Insira o seu nome" 
+                                title="Nome completo" 
+                                required
+                            >                        
+                    </div>
+                    <div class="mb-3">                        
+                            <label 
+                                class="form-label" 
+                                for="email">
+                                    Email
+                            </label>
+                            <input 
+                                class="form-control" 
+                                id="email" 
+                                type="email" 
+                                placeholder="Insira o seu email" 
+                                title="Lembre de inserir um email válido" 
+                                required
+                            >
+                    </div>
+                    <div class="mb-3">
+                            <label 
+                                class="form-label"
+                                for="telefone">
+                                Telefone
+                            </label>
+                            <input class="form-control"
+                                id="telefone"
+                                name="telefone" 
+                                type="tel" 
+                                placeholder="XX-XXXXX-XXXX"
+                                title="Insira o código da cidade e número"
+                                pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" 
+                                required
+                            >
+                    </div>
+                    <div class="mb-3">
+                            <label 
+                                class="form-label"
+                                for="profissao">
+                                    Profissão
+                            </label>
+                            <select id="profissao" class="form-select" aria-label="Seleção de profissão" required>
+                                <option value="frontend">Frontend</option>
+                                <option value="backend">Backend</option>
+                                <option value="fullstack">Fullstack</option>
+                                <option value="mobile">Mobile</option>
+                            </select>
 
-            <button type="button" onclick="adicionar()" class="btn btn-primary btn-hover">Adicionar</button>
+                            <!--<input 
+                                class="form-control"
+                                id="profissao" 
+                                type="text" 
+                                placeholder="Insira a sua ocupação" 
+                                title="Insira sua última profissão"
+                                required
+                            >-->
+                    </div>
+
+                     <button type="button" onclick="adicionar()" class="btn btn-primary btn-hover">Adicionar</button>
             
-            <button type="submit" value="" class="btn btn-outline-secondary">Iniciar gráfico pizza</button>
+           
         
-            </form>
+                </form>
+            </div>
+            <div class="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+        
         </div>
-
         <hr>
         
         <div class="container">
-        <table id="myTable" class="table table-primary table-striped table-hover">
+        <table id="myTable" class="table table-dark table-striped table-hover">
             <thead>
                 <tr id="0">
                     <th>cod</th>
@@ -89,7 +120,7 @@
                     <th>ação</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tBody1">
 
             </tbody>
             
@@ -100,7 +131,7 @@
 
         <div class="container">
 
-        <table id="secondTable" class="table table-success table-striped-columns table-hover">
+        <table id="secondTable" class="table table-danger table-striped-columns table-hover">
             <thead>
                 <tr id="0">
                     <th>cod</th>
@@ -110,8 +141,8 @@
                     <th>marca</th>
                 </tr>
             </thead>
-            <tbody>
-
+            <tbody id="tBody2">
+               
             </tbody>
             
         </table>
