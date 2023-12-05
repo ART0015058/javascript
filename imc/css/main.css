@@ -1,0 +1,15 @@
+.float-form{
+    width: 40%;
+    
+}
+
+.mt-2{
+    width: 50%;
+    
+}
+
+.float{
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
