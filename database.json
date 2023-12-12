@@ -11,36 +11,6 @@
       "nome": "Far Cry 4",
       "imagem": "https://codetheworld.io/wp-content/uploads/2023/12/Far-Cry-4.png",
       "preco": 200
-    },
-    {
-      "id": 3,
-      "nome": "Monster Hunter World",
-      "imagem": "https://www.pngarts.com/files/2/Monster-Hunter-World-PNG-Transparent-Image.png",
-      "preco": 300
-    },
-    {
-      "id": 4,
-      "nome": "Ni-Oh",
-      "imagem": "https://th.bing.com/th/id/R.11e3144843ab10d164328731e885905e?rik=yjzhUoSWE%2f7grg&riu=http%3a%2f%2fvgboxart.com%2fresources%2flogo%2f14180_nioh-prev.png&ehk=Xlhtz6fLs0LywLijVE86MmWCqTFiFSYc5kQTEvzZFeQ%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
-      "preco": 250
-    },
-    {
-      "nome": "The Legend of Zelda",
-      "img": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
-      "preco": 100,
-      "id": 5
-    },
-    {
-      "nome": "The Legend of Zelda",
-      "img": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
-      "preco": 100,
-      "id": 6
-    },
-    {
-      "nome": "The Legend of Zelda",
-      "img": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
-      "preco": 100,
-      "id": 7
     }
   ]
 }
