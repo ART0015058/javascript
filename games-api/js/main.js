@@ -1,9 +1,4 @@
-import { getAllGames } from "./service.js";
-import { createGame } from "./service.js";
-import { deleteGame } from "./service.js";
-import { updateGame } from "./service.js";
-
-var URL = "http://localhost:3000/jogos";
+import { getAllGames, createGame, deleteGame, updateGame } from "./service.js";
 
 window.onload = () => {
   loadGames();
@@ -47,10 +42,10 @@ document.getElementById('btnDelete').addEventListener('click', () => {
 // Refatorado
 document.getElementById('btnUpdate').addEventListener('click', () => {
   const jogo = {
-    nome: "The Legend of Zelda II",
-    img: "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
-    preco: 300,
-    id: 3
+      nome: "The Legend of Zelda: Tears of the Kingdom",
+      img: "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
+      preco: 300,
+      id: 3
   }
   updateGame(jogo);
 });

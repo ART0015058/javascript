@@ -44,7 +44,7 @@ export const updateGame = async (game) => {
     fetch(URL + `/${game.id}`, {
       method: "PATCH",
       headers: {
-        "Content-Type": "applicationno/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(game),
     })
