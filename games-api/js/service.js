@@ -19,3 +19,36 @@ export const getAllGames = async () => {
     }
 
 }; 
+
+export const createGame = async (game) => {
+    fetch ( URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(game),
+    })
+    .then((response) => response.json())
+    .then((data) => console.log("sucesso: ", data))
+    .catch((error) => console.log("Erro: ", error));
+};
+
+export const deleteGame = async (game) => {
+    fetch(URL + `/${game.id}`, { method: "DELETE" })
+    .then((response) => response.json())
+    .then((data) => console.log("sucesso: ", data))
+    .catch((error) => console.log("Erro: ", error));
+};
+
+export const updateGame = async (game) => {
+    fetch(URL + `/${game.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "applicationno/json",
+      },
+      body: JSON.stringify(game),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("sucesso: ", data))
+      .catch((error) => console.log("Erro: ", error));
+  };
