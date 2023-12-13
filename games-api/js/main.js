@@ -12,12 +12,14 @@ const loadGames = () => {
     resp.forEach((jogo) => {
       const gamesElement = document.createElement("div");
       gamesElement.innerHTML = 
-        `<div class="col">
-          <div class="elemento"><img class="cardimg" src="${jogo.img}" alt="${jogo.nome}">           
-              <h4 class="cardtitle">
-                ${jogo.nome}
-              </h4>
-              <p class="cardtext">R$ ${jogo.preco}</p></div>                      
+        `<div class="elemento">
+          <img class="cardimg" src="${jogo.img}" alt="${jogo.nome}">
+          <hr>           
+          <h5 class="cardtitle">
+            ${jogo.nome}
+          </h5>
+          <hr>
+          <p class="cardtext">R$ ${jogo.preco}</p>                      
         </div>`;
       dataContainer.appendChild(gamesElement);
     });
