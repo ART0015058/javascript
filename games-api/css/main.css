@@ -1,0 +1,32 @@
+.fundo{background-color: rgb(230, 223, 211);}
+
+.col{ display: flex;
+    gap: 1%;
+}
+
+.elemento{background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    width: 40%;
+    height: auto;
+    margin: 10px;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.cardimg{display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;   
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+}
+
+.cardtitle{color: rgb(0, 0, 0); 
+    text-align: initial;
+}
+
+.cardtext{color: rgb(61, 1, 1);
+    text-align: end;
+}
+

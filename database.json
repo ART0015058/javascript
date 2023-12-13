@@ -3,14 +3,20 @@
     {
       "id": 1,
       "nome": "Dark Souls",
-      "imagem": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
+      "img": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
       "preco": 300
     },
     {
       "id": 2,
       "nome": "Far Cry 4",
-      "imagem": "https://codetheworld.io/wp-content/uploads/2023/12/Far-Cry-4.png",
+      "img": "https://codetheworld.io/wp-content/uploads/2023/12/Far-Cry-4.png",
       "preco": 200
+    },
+    {
+      "nome": "The Legend of Zelda: Tears of the Kingdom",
+      "img": "https://zelda.nintendo.com/tears-of-the-kingdom/_images/game/logo-shadow.png",
+      "preco": 300,
+      "id": 3
     }
   ]
 }
