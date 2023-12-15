@@ -2,21 +2,67 @@
   "jogos": [
     {
       "id": 1,
+      "nota": 4.9,
       "nome": "Dark Souls",
       "img": "https://codetheworld.io/wp-content/uploads/2023/12/Dark-Souls.png",
+      "resumo": "O jogo é ambientado em um cenário sombrio de fantasia medieval, onde o personagem do jogador luta contra cavaleiros, dragões, fantasmas, demônios e outras entidades monstruosas ou sobrenaturais. O acréscimo, a perda e a recuperação de almas são fundamentais para a narrativa e a jogabilidade dos jogos Dark Souls. Este jogo faz uso do seu cenário e de uma narrativa cíclica abrangente centrada no fogo, ligados através de temas e elementos, incluindo interações com fantasmas e batalhas com demónios.",
       "preco": 300
     },
     {
       "id": 2,
+      "nota": 4.9,
       "nome": "Far Cry 4",
       "img": "https://codetheworld.io/wp-content/uploads/2023/12/Far-Cry-4.png",
+      "resumo": "O jogo segue Ajay Ghale, um jovem Kyrati-americano que retorna ao seu país natal, Kyrat para espalhar as cinzas de sua falecida mãe. Kyrat já foi um estado autônomo no Himalaia, governado por uma família real, antes de ser envolvido em uma série de guerras civis. Ajay encontra o país em um estado de conflito entre o Exército Real de Kyrat, liderado pelo excêntrico e tirânico Rei Pagan Min. As escolhas que Ajay fizer determinarão o destino de Kyrat.",
       "preco": 200
     },
     {
-      "nome": "The Legend of Zelda: Tears of the Kingdom",
-      "img": "https://zelda.nintendo.com/tears-of-the-kingdom/_images/game/logo-shadow.png",
-      "preco": 300,
-      "id": 3
+      "id": 3,
+      "nota": 2.5,
+      "nome": "Assassin's Creed Odyssey",
+      "img": "https://iili.io/JulbY0B.png",
+      "resumo": "Odyssey apresenta uma narrativa ambientada nos dias modernos, que segue Layla Hassan. Auxiliada pelos companheiros Assassinos Victoria Bibeau, Kiyoshi Takakura e Alannah Ryan, com o objetivo de encontrar o Cajado de Hermes Trismegistus e a cidade perdida de Atlântida.",
+      "preco": 199
+    },
+    {
+      "id": 4,
+      "nota": 4.5,
+      "nome": "Mortal Kombat One",
+      "img": "https://meups.com.br/wp-content/uploads/2023/09/scorpion.webp",
+      "resumo": "Depois de derrotar Kronika e Shang Tsung, o Deus do Fogo Liu Kang usa a Ampulheta de Kronika para recriar o universo antes de entregar o controle dele para Geras para se tornar o protetor do Plano Terreno. Com o tempo, ele forma uma tênue aliança com Outworld sob os auspícios da continuação dos torneios de Mortal Kombat.",
+      "preco": 300
+    },
+    {
+      "id": 5,
+      "nota": 5,
+      "nome": "Monster Hunter: World",
+      "img": "https://iili.io/JulbQee.png",
+      "resumo": "Num cenário de alta fantasia sem nome, os humanos e outras raças sencientes fixaram os seus olhos no Novo Mundo, uma região selvagem indomada onde muitos monstros poderosos vagueiam livres e onde os investigadores foram atraídos para descobrir novos mistérios. Várias frotas com destino ao oceano já foram enviadas para estabelecer bases de trabalho, a salvo de monstros, e as operações são lideradas pela Comissão de Pesquisa.",
+      "preco": 250
+    },
+    {
+      "id": 6,
+      "nota": 4.9,
+      "nome": "Elden Ring",
+      "img": "https://iili.io/JulbSzG.png",
+      "resumo": "Elden Ring se passa nas Lands Between. Anteriormente governado pela imortal Rainha Marika, guardiã do Elden Ring, uma força poderosa manifestada como o conceito físico de ordem. Quando Marika quebrou o Elden Ring e desapareceu, seus filhos semideuses começaram a brigar por pedaços do Elden Ring.",
+      "preco": 250
+    },
+    {
+      "id": 7,
+      "nota": 4.7,
+      "nome": "NIOH",
+      "img": "https://iili.io/JulbbXj.png",
+      "resumo": "Nioh se passa em 1600, dentro de uma versão ficcional de fantasia sombria do final do período Sengoku, uma época em que os clãs do Japão estavam em guerra antes da unificação sob o xogunato Tokugawa e do início do período Edo. Em meio aos combates e ao alto número de mortos, yōkai apareceram e começaram a causar estragos por todo o país.",
+      "preco": 210
+    },
+    {
+      "nota": 4.8,
+      "nome": "The Legend of Zelda: Tears of the kingdom",
+      "img": "https://iili.io/JulbyqQ.png",
+      "resumo": "Tears of the Kingdom ocorre alguns anos depois de Breath of the Wild. Link e Zelda partem para explorar uma caverna sob o Castelo de Hyrule, de onde a escuridão, uma substância venenosa, tem vazado e feito as pessoas adoecerem. Lá, eles encontram um mural representando a fundação de Hyrule e um conflito subsequente conhecido como Guerra do Aprisionamento, e decidem se aventurar mais fundo, provocando o despertar de uma múmia que ataca os dois com tristeza.",
+      "preco": 350,
+      "id": 8
     }
   ]
 }
