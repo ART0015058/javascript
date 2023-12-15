@@ -14,7 +14,7 @@ const loadGames = () => {
         `
           <div class="card">
             <h3>${jogo.nota}</h3>
-            <i clas="fa-regular fa-heart"></i>
+            <i class="fa-regular fa-heart"></i>
             <div class="image">
             <img src="${jogo.img}" alt="${jogo.nome}">
             <img class="blur" src="${jogo.img}" alt="${jogo.nome}">
